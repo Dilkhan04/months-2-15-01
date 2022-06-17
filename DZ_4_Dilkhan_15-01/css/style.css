@@ -1,0 +1,26 @@
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.buttons{
+    width: 50vw;
+    display: flex;
+    justify-content: space-around;
+}
+.buttons button {
+    width: 150px;
+    height: 60px;
+    background-color: #4c4c4c;
+    border: #4c4c4c;
+    font-size: 34px;
+    color: white;
+    border-radius: 10px;
+}
+span {
+    font-size: 62px;
+    font-weight: 700;
+    text-align: center;
+}
