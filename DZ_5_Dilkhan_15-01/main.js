@@ -13,6 +13,12 @@ function change(id) {
 	render()
 }
 
+function Deleted(id) {
+	const item = list.findIndex(d => d.id === id)
+	list.splice(item, 1)
+	render(list)
+}
+
 function render() {
 	const mainDiv = document.createElement('div');
 	mainDiv.setAttribute('class', 'list');
@@ -28,21 +34,21 @@ function render() {
 		buttons.setAttribute('class', 'actions');
 		const changeButton = document.createElement('button');
 		changeButton.setAttribute('class', 'change');
+		changeButton.setAttribute('class', 'change');
+		changeButton.onclick = () => {
+			change(list[i].id)
+		}
 		changeButton.innerText = "change";
 		const deleteButton = document.createElement('button');
 		deleteButton.setAttribute('class', 'delete');
+		deleteButton.onclick = () => {
+			Deleted(list[i].id).remove()
+		}
 		deleteButton.innerText = "delete";
 		buttons.append(changeButton, deleteButton);
 		div.append(buttons);
 		mainDiv.append(div);
 
-		deleteButton.onclick = () => {
-			div.remove()
-		}
-		changeButton.setAttribute('class', 'change');
-		changeButton.onclick = () => {
-			change(list[i].id)
-		}
 	}
 
 	const form = document.querySelector('.form');
