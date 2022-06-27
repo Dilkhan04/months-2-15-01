@@ -57,13 +57,16 @@ function render() {
 }
 
 
-addButton.onclick = function () {
+addButton.addEventListener('click', function () {
 	const obj = {
 		id: list.length + 1,
 		text: input.value
 	}
-	input.value = ''
-	list.push(obj)
-	console.log(list)
-	render()
-}
+	if (input.value === '') {
+		return false
+	} else {
+		list.push(obj)
+		render()
+	}
+	input.value = '';
+})
